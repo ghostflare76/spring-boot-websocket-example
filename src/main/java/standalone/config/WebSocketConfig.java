@@ -14,7 +14,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 	public void configureMessageBroker(MessageBrokerRegistry config) {
 		
 		config.enableStompBrokerRelay("/topic","/queue/")
-		.setRelayHost("172.20.54.151")
+		.setRelayHost("127.0.0.1")
 		.setVirtualHost("/")
 		.setSystemLogin("test")
 		.setSystemPasscode("test")
