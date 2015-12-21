@@ -12,4 +12,4 @@ spring-websockets
 * thymeleaf
 
 # Arichitecture
-[![](http://3.bp.blogspot.com/-HcuGmvRLndk/Uxq3W75emcI/AAAAAAAABSY/zuP49M1nY_U/s1600/springwebsockets.png)]
+![](http://3.bp.blogspot.com/-HcuGmvRLndk/Uxq3W75emcI/AAAAAAAABSY/zuP49M1nY_U/s1600/springwebsockets.png)
