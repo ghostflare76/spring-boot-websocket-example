@@ -5,8 +5,8 @@ si-spring-websockets
 
 # requirement
 
-spring boot 
-spring intergration
-rabbit mq 
-jsoup
-thymeleaf
+* spring boot 
+* spring intergration
+* rabbitmq 
+* jsoup
+* thymeleaf
