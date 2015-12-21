@@ -10,23 +10,22 @@
 		http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http.xsd">
 
 	<import resource="rabbit-context.xml"/>
-	<int:inbound-channel-adapter channel="quakeinfotrigger" expression="''">
-		<int:poller fixed-delay="60000"></int:poller>
-	</int:inbound-channel-adapter>
 	
-	<int:channel id="quakeinfo"/>
-
-	<int:channel id="quakeinfotrigger"></int:channel>
-
-	<int-http:outbound-gateway id="quakerHttpGateway"
-	    request-channel="quakeinfotrigger"
-	    url="http://earthquake.usgs.gov/earthquakes/feed/geojson/all/hour"
+	<int:inbound-channel-adapter channel="rankinfotrigger" expression="''">
+		<int:poller fixed-delay="10000"></int:poller>
+	</int:inbound-channel-adapter>	
+	
+	<int:channel id="rankinfo"/>
+	
+	<int-http:outbound-gateway id="rankHttpGateway"
+	    request-channel="rankinfotrigger"
+	    url="http://localhost:8080/rank"
 	    http-method="GET"
 	    expected-response-type="java.lang.String"
 	    charset="UTF-8"
-	    reply-channel="quakeinfo">
+	    reply-channel="rankinfo">
 	</int-http:outbound-gateway>
-
-	<int-amqp:outbound-channel-adapter amqp-template="amqpTemplate" channel="quakeinfo" />
+	
+	<int-amqp:outbound-channel-adapter amqp-template="rankTemplate" channel="rankinfo" />
 
 </beans>
