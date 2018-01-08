@@ -13,3 +13,7 @@ spring-websockets
 
 # Arichitecture
 ![](http://3.bp.blogspot.com/-HcuGmvRLndk/Uxq3W75emcI/AAAAAAAABSY/zuP49M1nY_U/s1600/springwebsockets.png)
+
+#rabbitMq install
+* docker rabbitmq embed stomp plugin  https://hub.docker.com/r/resilva87/docker-rabbitmq-stomp/
+
