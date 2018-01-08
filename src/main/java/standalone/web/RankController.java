@@ -18,15 +18,13 @@ public class RankController {
 	public List<RankModel> top10rank() throws Exception {
 		List<RankModel> list = new ArrayList<RankModel>();
 		
-		Document doc = Jsoup.connect("http://naver.com/").get();
-		Elements elements = doc.select("ol#realrank > li:not(#lastrank) > a");
-		for (int i = 0; i < elements.size(); i++) {
+		Document doc = Jsoup.connect("https://datalab.naver.com/keyword/realtimeList.naver").get();
+		Elements elements = doc.select("ul.rank_list").last().select("li.list").select("span");
+		
+		for (int i = 0; i < elements.size(); i++) {		
 			RankModel rank = new RankModel();
 			rank.setRanking(i+1);
-			rank.setTitle(elements.get(i).attr("title"));
-			rank.setRankName(elements.get(i).select("span.tx").text());
-			rank.setRankLevel(elements.get(i).select("span.rk").text());
-			rank.setRankUrl(elements.get(i).attr("href"));
+			rank.setTitle(elements.get(i).select(".title").text());					
 			list.add(rank);
 		}
 		
